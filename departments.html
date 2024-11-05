@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Departments</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Departments</h1>
+        <a href="index.html">Back to Dashboard</a>
+    </header>
+    <main>
+        <h2>Department Records</h2>
+        <button onclick="document.getElementById('formContainer').style.display = 'block'">Add New Department</button>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Department Name</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="departmentsTableBody"></tbody>
+        </table>
+        <div id="formContainer" style="display: none;">
+            <h3>Add / Edit Department</h3>
+            <form id="departmentsForm" onsubmit="submitForm(event, 'departments')">
+                <input type="hidden" name="id">
+                <input type="text" name="departmentName" placeholder="Department Name" required>
+                <button type="submit">Save</button>
+            </form>
+        </div>
+    </main>
+    <script src="scripts.js"></script>
+</body>
+</html>

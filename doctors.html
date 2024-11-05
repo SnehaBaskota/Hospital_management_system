@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Doctors</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Doctors</h1>
+        <a href="index.html">Back to Dashboard</a>
+    </header>
+    <main>
+        <h2>Doctor Records</h2>
+        <button onclick="document.getElementById('formContainer').style.display = 'block'">Add New Doctor</button>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Specialization</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="doctorsTableBody"></tbody>
+        </table>
+        <div id="formContainer" style="display: none;">
+            <h3>Add / Edit Doctor</h3>
+            <form id="doctorsForm" onsubmit="submitForm(event, 'doctors')">
+                <input type="hidden" name="id">
+                <input type="text" name="name" placeholder="Doctor Name" required>
+                <input type="text" name="specialization" placeholder="Specialization" required>
+                <button type="submit">Save</button>
+            </form>
+        </div>
+    </main>
+    <script src="scripts.js"></script>
+</body>
+</html>
