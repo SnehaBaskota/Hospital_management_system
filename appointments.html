@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Appointments</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Appointments</h1>
+        <a href="index.html">Back to Dashboard</a>
+    </header>
+    <main>
+        <h2>Appointment Records</h2>
+        <button onclick="document.getElementById('formContainer').style.display = 'block'">Add New Appointment</button>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Patient Name</th>
+                    <th>Doctor</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="appointmentsTableBody"></tbody>
+        </table>
+        <div id="formContainer" style="display: none;">
+            <h3>Add / Edit Appointment</h3>
+            <form id="appointmentsForm" onsubmit="submitForm(event, 'appointments')">
+                <input type="hidden" name="id">
+                <input type="text" name="patientName" placeholder="Patient Name" required>
+                <select name="doctor" required>
+                    <option value="">Select Doctor</option>
+                    <option value="Dr. Smith">Dr. Smith</option>
+                    <option value="Dr. Jones">Dr. Jones</option>
+                    <option value="Dr. Davis">Dr. Davis</option>
+                </select>
+                <input type="date" name="appointmentDate" required>
+                <input type="time" name="appointmentTime" required>
+                <button type="submit">Save</button>
+            </form>
+        </div>
+    </main>
+    <script src="scripts.js"></script>
+</body>
+</html>
