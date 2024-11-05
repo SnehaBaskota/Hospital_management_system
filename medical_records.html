@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Medical Records</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Medical Records</h1>
+        <a href="index.html">Back to Dashboard</a>
+    </header>
+    <main>
+        <h2>Medical Record Records</h2>
+        <button onclick="document.getElementById('formContainer').style.display = 'block'">Add New Record</button>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Patient Name</th>
+                    <th>Diagnosis</th>
+                    <th>Treatment</th>
+                    <th>Date</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="recordsTableBody"></tbody>
+        </table>
+        <div id="formContainer" style="display: none;">
+            <h3>Add / Edit Medical Record</h3>
+            <form id="recordsForm" onsubmit="submitForm(event, 'medical_records')">
+                <input type="hidden" name="id">
+                <input type="text" name="patientName" placeholder="Patient Name" required>
+                <input type="text" name="diagnosis" placeholder="Diagnosis" required>
+                <input type="text" name="treatment" placeholder="Treatment" required>
+                <input type="date" name="recordDate" required>
+                <button type="submit">Save</button>
+            </form>
+        </div>
+    </main>
+    <script src="scripts.js"></script>
+</body>
+</html>

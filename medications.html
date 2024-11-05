@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Medications</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Medications</h1>
+        <a href="index.html">Back to Dashboard</a>
+    </header>
+    <main>
+        <h2>Medication Records</h2>
+        <button onclick="document.getElementById('formContainer').style.display = 'block'">Add New Medication</button>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Patient Name</th>
+                    <th>Medication</th>
+                    <th>Dosage</th>
+                    <th>Frequency</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="medicationsTableBody"></tbody>
+        </table>
+        <div id="formContainer" style="display: none;">
+            <h3>Add / Edit Medication</h3>
+            <form id="medicationsForm" onsubmit="submitForm(event, 'medications')">
+                <input type="hidden" name="id">
+                <input type="text" name="patientName" placeholder="Patient Name" required>
+                <input type="text" name="medication" placeholder="Medication" required>
+                <input type="text" name="dosage" placeholder="Dosage" required>
+                <input type="text" name="frequency" placeholder="Frequency" required>
+                <button type="submit">Save</button>
+            </form>
+        </div>
+    </main>
+    <script src="scripts.js"></script>
+</body>
+</html>
